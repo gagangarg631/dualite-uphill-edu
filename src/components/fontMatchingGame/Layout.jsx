@@ -18,6 +18,7 @@ const layoutStyle = {
   flexDirection: "column",
   alignItems: "center",
   // backgroundColor: "#7BD1BA",
+  position: 'relative'
 };
 
 const gameBoxStyle = {
@@ -166,7 +167,7 @@ const Layout = ({
           },
           width: "100px",
           position: "absolute",
-          top: "75%",
+          top: "85%",
         }}
       >
         <Image src={doneButton} />
