@@ -5,6 +5,7 @@ import { Box, LinearProgress } from "@mui/material";
 export default function ProgressBar(props) {
   const {
     steper: { step },
+    progress: { canProgress, setCanProgress }
   } = useFontMatch();
 
   const [progress, setProgress] = useState(step * 5 - 5);
@@ -15,10 +16,11 @@ export default function ProgressBar(props) {
     const timer = setInterval(() => {
       setProgress((oldProgress) => {
         if (oldProgress === progressValue) {
+          setCanProgress(false);
           return progressValue;
         }
 
-        return Math.min(oldProgress + 5, progressValue);
+        return canProgress ? Math.min(oldProgress + 5, progressValue) : oldProgress;
       });
     }, 100);
 

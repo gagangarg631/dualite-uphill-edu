@@ -24,14 +24,17 @@ import {
   EidFestival,
 } from "../../components/fontMatchingGame";
 import useFontMatch from "../../hooks/useFontMatch";
+import AudioPlayer from "../../components/AudioPlayer"
 
 const FontMatching = () => {
   const {
     steper: { step },
+    gameSoundRef
   } = useFontMatch();
 
   return (
     <>
+      <AudioPlayer loop src='bgSound.mp3' ref={gameSoundRef} />
       {step === 0 && <Gradient />}
       {step === 1 && <NFTS />}
       {step === 2 && <GrastroHealth />}

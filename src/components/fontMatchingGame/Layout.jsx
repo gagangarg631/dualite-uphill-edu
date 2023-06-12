@@ -1,6 +1,6 @@
 import { Box, Button, Fade, Slide, Typography } from "@mui/material";
 import { ReactComponent as DoneBtn } from "../../assets/done.svg";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import useFontMatch from "../../hooks/useFontMatch";
 import doneButton from "../../assets/done.svg";
 import Image from "../Image";
@@ -8,6 +8,7 @@ import ProgressBar from "../ProgressBar";
 import { lines } from "../../utils/constants";
 import CloudText from "../CloudText";
 import * as constants from "../../utils/constants";
+import AudioPlayer from "../AudioPlayer";
 
 const layoutStyle = {
   background: "url(Gradient.png)",
@@ -29,6 +30,17 @@ const gameBoxStyle = {
   backgroundRepeat: "no-repeat",
   backgroundPosition: "center",
   margin: "auto",
+};
+
+const win_anim_style = {
+  position: "absolute",
+  bottom: "60px",
+  right: "0px",
+  height: "200px",
+  width: "180px",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
 };
 
 const Layout = ({
@@ -69,18 +81,52 @@ const Layout = ({
   const {
     steper: { setStep, step },
     answer: { isCorrect },
+    correctAnswer,
+    setCorrectAnswer,
+    gameSoundRef,
+    progress: {
+      setCanProgress
+    }
   } = useFontMatch();
 
   const [textShow, setTextShow] = useState(false);
   const [progressShow, setProgressShow] = useState(false);
 
+  const winSoundRef = useRef(null);
+  const loseSoundRef = useRef(null);
+  const exampleSoundRef = useRef(null);
+
   const next = () => {
     if (isCorrect) {
-      setStep(step < 22 ? step + 1 : step);
+      setTimeout(() => {
+        setCanProgress(true);
+        setStep(step < 22 ? step + 1 : step);
+      }, 2000);
+      setCorrectAnswer(true);
+      if (winSoundRef.current) {
+        winSoundRef.current.play();
+      }
+      if (exampleSoundRef.current) {
+        gameSoundRef.current.pause()
+        exampleSoundRef.current.play();
+
+        setTimeout(() => {
+          gameSoundRef.current.play()
+        }, 2500)
+      }
     } else {
-      alert("please choose correct font");
+      setCorrectAnswer(false);
+      if (loseSoundRef.current) {
+        loseSoundRef.current.play();
+      }
     }
   };
+
+  useEffect(() => {
+    if (correctAnswer !== null) {
+      setTimeout(() => setCorrectAnswer(null), 2500);
+    }
+  }, [correctAnswer])
 
   useEffect(() => {
     if (step === 1) {
@@ -119,6 +165,10 @@ const Layout = ({
 
   return (
     <Box sx={layoutStyle}>
+      <AudioPlayer ref={winSoundRef}  preload="auto" src='sounds/startAndCorrect.mp3' />
+      <AudioPlayer ref={loseSoundRef}  preload="auto" src='sounds/incorrect-sound.mp3' />
+      <AudioPlayer ref={exampleSoundRef}  preload="auto" src='sounds/exampleComplete.mp3' />
+
       {step === 1 ? (
         <Slide in={progressShow} direction="left" timeout={1000}>
           <Box sx={{ width: "100%" }}>
@@ -173,10 +223,10 @@ const Layout = ({
         <Image src={doneButton} />
       </Box>
       <CloudText />
-      <Box
+      {/* <Box
         sx={{
           position: "absolute",
-          bottom: "80px",
+          bottom: "120px",
           right: "80px",
           margin: "auto",
           transform: "rotateY(180deg)",
@@ -188,7 +238,50 @@ const Layout = ({
         }}
       >
         <img src="no_anim.png" height="300px" />
-      </Box>
+      </Box> */}
+      {correctAnswer && (
+        <Box sx={win_anim_style}>
+          <img src="win_anim.gif" height="300px" />
+          {/* <audio
+            style={{
+              visibility: "hidden",
+              height: 0,
+            }}
+            controls
+            ref={(ref) => (winAudioRef.current = ref)}
+          >
+            <source src={"sounds/startAndCorrect.mp3"} type="audio/mp3" />
+            Your browser does not support the audio element.
+          </audio> */}
+        </Box>
+      )}
+      {correctAnswer === false && (
+        <Box sx={win_anim_style}>
+          <img src="lose_anim.gif" height="220px" />
+          {/* <audio
+            style={{
+              visibility: "hidden",
+              height: 0,
+            }}
+            controls
+            ref={(ref) => (audioRef.current = ref)}
+          >
+            <source src={"sounds/incorrect-sound.mp3"} type="audio/mp3" />
+            Your browser does not support the audio element.
+          </audio> */}
+        </Box>
+      )}
+      {correctAnswer === null && (
+        <Box
+          sx={{
+            ...win_anim_style,
+            bottom: "30px",
+            transform: "rotateY(180deg)",
+          }}
+        >
+          <img src="no_anim.png" height="250px" />
+        </Box>
+      )}
     </Box>
   );
 };

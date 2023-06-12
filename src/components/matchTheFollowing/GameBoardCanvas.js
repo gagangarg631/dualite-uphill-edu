@@ -13,27 +13,26 @@ const layoutStyle = {
   width: "100vw",
 
   display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
+  justifyContent: 'center',
   position: "relative",
+  background: "url(fontMatchingBg.png)",
+  backgroundSize: '100% 100%',
+  backgroundAttachment: "contain",
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "center",
 };
 
 const gameStyle = {
   height: `100vh`,
-  width: `100vw`,
-  background: "url(fontMatchingBg.png)",
-  // backgroundSize: '100% 100%',
-  backgroundSize: "cover",
-  backgroundRepeat: "no-repeat",
-  backgroundPosition: "center",
+  width: `40vw`,
   display: "flex",
-  alignItems: "center",
   justifyContent: "center",
+  alignItems: "flex-end",
   position: "relative",
 };
 
 const lastSourceStone = {
-  y: 360,
+  y: window.innerHeight - 120,
   x: 70,
 };
 
@@ -168,26 +167,18 @@ const GameBoardCanvas = () => {
 
   return (
     <Box sx={layoutStyle}>
-      <Box
+
+      <ProgressBar
         sx={{
+          height: `${getPercent(window.innerHeight, 7)}px`,
           width: "90%",
+          position: 'fixed',
+          top: '10px',
+          borderRadius: '16px',
+          overflow: 'hidden'
         }}
-      >
-        <ProgressBar
-          sx={{
-            height: `${getPercent(window.innerHeight, 7)}px`,
-            width: "100%",
-          }}
-        />
-      </Box>
+      />
       <Box sx={gameStyle}>
-        <Box
-          sx={{
-            height: "100%",
-            width: "100px",
-            position: "relative",
-          }}
-        >
           <Stone
             quesIndex={0}
             screenIndex={screenIndex}
@@ -230,12 +221,10 @@ const GameBoardCanvas = () => {
             direction="right"
             pos={targetStones[2]}
           />
-
           <Canvas
             height={`${getPercent(window.innerHeight, 90)}px`}
-            width="500px"
+            width={`${getPercent(window.innerWidth, 40)}px`}
           />
-        </Box>
       </Box>
       {matchGameWin && (
         <Box sx={win_anim_style}>

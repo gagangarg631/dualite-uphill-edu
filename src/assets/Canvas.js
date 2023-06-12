@@ -41,5 +41,6 @@ const Canvas = ({ height, width }) => {
 export default Canvas
 
 const canvasStyle = {
-    position: 'absolute'
+    position: 'absolute',
+    border: '1px solid black'
 }

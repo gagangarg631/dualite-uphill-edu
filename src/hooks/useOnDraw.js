@@ -2,10 +2,15 @@ import { useContext, useEffect, useRef } from "react";
 import { pairs } from "../utils/constants";
 import MatchGameContext from "../contexts/MatchGameContext";
 
+// const lastSourceStone = {
+//     y: 410,
+//     x: 125
+// }
+
 const lastSourceStone = {
-    y: 410,
-    x: 125
-}
+    y: window.innerHeight - 120,
+    x: 70,
+};
 
 const sourceStones = [
     {
@@ -24,16 +29,16 @@ const sourceStones = [
 
 const targetStones = [
     {
-        x: 385,
-        y: 180
+        x: lastSourceStone.x + 300,
+        y: lastSourceStone.y - 240,
     },
     {
-        x: 385,
-        y: 310
+        x: lastSourceStone.x + 300,
+        y: lastSourceStone.y - 120,
     },
     {
-        x: 385,
-        y: 440
+        x: lastSourceStone.x + 300,
+        y: lastSourceStone.y,
     },
 ]
 

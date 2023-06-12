@@ -4,15 +4,18 @@ import FontMatching from "./pages/FontMatching";
 import MatchTheFollowing from "./pages/MatchTheFollowing";
 import FontContext from "./contexts/FontsContext";
 import MatchGameContext from "./contexts/MatchGameContext";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function App() {
   const [fontIndex, setFontIndex] = useState(0);
   const [step, setStep] = useState(0);
   const [isCorrect, setIsCorrect] = useState(false);
+  const [correctAnswer, setCorrectAnswer] = useState(null);
+  const [canProgress, setCanProgress] = useState(false);
 
   const [currentOptions, setCurrentOptions] = useState([]);
   const [matchGameWin, setMatchGameWin] = useState(null);
+  const gameSoundRef = useRef(null);
 
   return (
     <FontContext.Provider
@@ -24,6 +27,13 @@ function App() {
           isCorrect,
           setIsCorrect,
         },
+        correctAnswer,
+        setCorrectAnswer,
+        gameSoundRef,
+        progress: {
+          canProgress,
+          setCanProgress
+        }
       }}
     >
       <MatchGameContext.Provider
