@@ -8,10 +8,11 @@ const DanceAcademy = () => {
             <DynamicText
                 color='white'
                 fontSize={24}
+                correctFont={constants.INTER}
                 fontList={[
-                    constants.INTER,
+                    constants.Nightmare_Story,
                     constants.NICO_MOJI,
-                    constants.Nightmare_Story
+                    constants.INTER,
                 ]}
                 position='absolute'
                 right='40px'

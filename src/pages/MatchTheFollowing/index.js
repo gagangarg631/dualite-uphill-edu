@@ -1,10 +1,9 @@
 import { Box } from "@mui/material"
+import GameBoardCanvas from "../../components/matchTheFollowing/GameBoardCanvas"
 
 const MatchTheFollowing = () => {
   return (
-    <Box>
-        
-    </Box>
+    <GameBoardCanvas />
   )
 }
 

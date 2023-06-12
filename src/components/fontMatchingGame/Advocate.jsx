@@ -10,10 +10,11 @@ const Advocate = () => {
                 color='black'
                 marginBottom='10px'
                 marginLeft='100px'
+                correctFont={constants.KOHINOORLATIN}
                 fontList={[
+                    constants.FUTURA,
                     constants.KOHINOORLATIN,
                     constants.TIMES,
-                    constants.FUTURA
                 ]} 
 
             >

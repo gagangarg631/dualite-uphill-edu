@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import useFontMatch from "../hooks/useFontMatch"
 import { Box, LinearProgress } from "@mui/material";
 
-export default function ProgressBar () {
+export default function ProgressBar (props) {
 
     const { steper: { step } } = useFontMatch()
 
@@ -27,14 +27,12 @@ export default function ProgressBar () {
     }, [step]);
 
     return (
-        <Box sx={{
-            height: 70,
-            width: '99vw',
-            marginTop: .5
-        }}>
+        <Box {...props}>
             <LinearProgress
                 sx={{
-                    height: '50px',
+                    height: '100%',
+                    backgroundColor: 'white',
+                    color: 'green'
                 }}
                 variant="determinate"
                 value={progress}

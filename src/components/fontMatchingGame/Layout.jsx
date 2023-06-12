@@ -5,15 +5,18 @@ import useFontMatch from '../../hooks/useFontMatch'
 import doneButton from '../../assets/done.svg'
 import Image from '../Image'
 import ProgressBar from '../ProgressBar'
+import { lines } from '../../utils/constants'
+import CloudText from '../CloudText'
 
 const layoutStyle = {
-  background: 'url(baseLayout.png)',
+  // background: 'url(baseLayout.png)',
   backgroundSize: '100% 100%',
   height: '100vh',
   width: '100vw',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
+  backgroundColor: '#7BD1BA'
 }
 
 const gameBoxStyle = {
@@ -78,16 +81,36 @@ const Layout = ({ children, bg = '', flexAllCenter, flexVerticalCenter, flexHori
     }
   }, [])
 
+  const MyProgressBar = () => {
+
+    return (
+      <Box sx={{
+        position: 'absolute',
+        top: '20px',
+        left: '20px',
+        height: 40,
+        width: '95%',
+        borderRadius: '30px',
+        overflow: 'hidden'
+      }}>
+        <ProgressBar sx={{
+          height: '100%',
+          width: '100%',
+        }} />
+      </Box>
+    )
+  }
+
   return (
     <Box sx={layoutStyle}>
       {step === 1 ? (
         <Slide in={progressShow} direction='left' timeout={1000}>
-          <Box>
-            <ProgressBar />
+          <Box sx={{ width: '100%' }}>
+            <MyProgressBar />
           </Box>
         </Slide>
       ) : (
-        <ProgressBar />
+        <MyProgressBar />
       )}
       {step === 1 && (
         <Box sx={{ width: '99vw', position: 'absolute', top: 10 }}>
@@ -98,7 +121,7 @@ const Layout = ({ children, bg = '', flexAllCenter, flexVerticalCenter, flexHori
           </Slide>
         </Box>
       )}
-      <Slide marginTop={6} direction='left' in={true}>
+      <Slide marginTop={12} direction='left' in={true}>
         <Box sx={{
           background: bg,
           ...extraStyle,
@@ -116,6 +139,7 @@ const Layout = ({ children, bg = '', flexAllCenter, flexVerticalCenter, flexHori
       }}>
         <Image src={doneButton} />
       </Box>
+      <CloudText />
     </Box>
   )
 }

@@ -5,9 +5,10 @@ import * as constants from '../../utils/constants'
 const EidFestival = () => {
     const textStyle = {
         color: 'white',
+        correctFont: constants.SAVOYE_LET,
         fontList: [
-            constants.SAVOYE_LET,
             constants.ARIAL,
+            constants.SAVOYE_LET,
         ],
     }
 

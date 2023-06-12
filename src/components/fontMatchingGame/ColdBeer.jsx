@@ -6,9 +6,10 @@ import { Box } from '@mui/material'
 const ColdBeer = () => {
     const textStyle = {
         color: 'black',
+        correctFont: constants.TINOS,
         fontList: [
-            constants.TINOS,
             constants.ARIAL,
+            constants.TINOS,
         ],
     }
 

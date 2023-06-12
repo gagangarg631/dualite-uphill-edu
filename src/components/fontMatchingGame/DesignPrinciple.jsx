@@ -17,10 +17,11 @@ const DesignPrinciple = () => {
                 <DynamicText
                     color='black'
                     fontSize={24}
+                    correctFont={constants.KOHINOORLATIN}
                     fontList={[
+                        constants.AKAYAKANADAKA_REGULAR,
                         constants.KOHINOORLATIN,
                         constants.ADAMINA,
-                        constants.AKAYAKANADAKA_REGULAR
                     ]}
                 >
                     UNIVERSAL PRINCIPLE
@@ -30,10 +31,11 @@ const DesignPrinciple = () => {
                     <DynamicText
                         color='black'
                         fontSize={24}
+                        correctFont={constants.KOHINOORLATIN}
                         fontList={[
-                            constants.KOHINOORLATIN,
                             constants.KITE_ONE,
-                            constants.KOHINOORLATIN
+                            constants.KOHINOORLATIN,
+                            constants.KOHINOORLATIN,
                         ]}
                     >
                         DESIGN

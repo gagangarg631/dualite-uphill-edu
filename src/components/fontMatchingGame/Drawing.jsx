@@ -6,18 +6,23 @@ import { Box } from "@mui/material"
 import FlexBox from '../FlexBox'
 
 const Drawing = () => {
-    const open_now = [
-        constants.FUTURA,
-        constants.COMBO,
-        constants.FLAMENCO
-    ]
+    const props = {
+        fontSize: 16,
+        color: '#FF2700',
+        correctFont: constants.FUTURA,
+        fontList: [
+            constants.COMBO,
+            constants.FUTURA,
+            constants.FLAMENCO
+        ]
+    }
     return (
         <Layout bg='url(backgrounds/drawing.png)' flexAllCenter>
             <FlexBox flexDirection='column' paddingTop='120px'>
-                <DynamicText color='#FF2700' fontSize={16} fontList={open_now}>
+                <DynamicText {...props}>
                     now
                 </DynamicText>
-                <DynamicText color='#FF2700' fontSize={16} fontList={open_now}>
+                <DynamicText {...props}>
                     open
                 </DynamicText>
             </FlexBox>
