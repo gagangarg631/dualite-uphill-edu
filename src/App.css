@@ -1,124 +1,128 @@
 @font-face {
-    font-family: "Futura";
-    src: url('fonts/FuturaCyrillicLight.ttf');
+  font-family: "Futura";
+  src: url("fonts/FuturaCyrillicLight.ttf");
 }
 @font-face {
-    font-family: "Pontano Sans";
-    src: url('fonts/PontanoSans-VariableFont_wght.ttf');
+  font-family: "Pontano Sans";
+  src: url("fonts/PontanoSans-VariableFont_wght.ttf");
 }
 @font-face {
-    font-family: "Times";
-    src: url('fonts/Times.ttc');
+  font-family: "Times";
+  src: url("fonts/Times.ttc");
 }
 @font-face {
-    font-family: "Times New Roman";
-    src: url('fonts/Times\ New\ Roman.ttf');
+  font-family: "Times New Roman";
+  src: url("fonts/Times\ New\ Roman.ttf");
 }
 @font-face {
-    font-family: "Poppins";
-    src: url('fonts/Poppins-Light.ttf');
+  font-family: "Poppins";
+  src: url("fonts/Poppins-Light.ttf");
 }
 @font-face {
-    font-family: "Tenor Sans";
-    src: url('fonts/Comic\ Sans\ MS.ttf');
+  font-family: "Tenor Sans";
+  src: url("fonts/Comic\ Sans\ MS.ttf");
 }
 @font-face {
-    font-family: "Arial";
-    src: url('fonts/Arial.ttf');
+  font-family: "Arial";
+  src: url("fonts/Arial.ttf");
 }
 @font-face {
-    font-family: "Futura - Medium";
-    src: url('fonts/FuturaCyrillicMedium.ttf');
+  font-family: "Futura - Medium";
+  src: url("fonts/FuturaCyrillicMedium.ttf");
 }
 @font-face {
-    font-family: "Savoye LET";
-    src: url('fonts/Savoye\ LET.ttc');
+  font-family: "Savoye LET";
+  src: url("fonts/Savoye\ LET.ttc");
 }
 @font-face {
-    font-family: "Nightmare Story";
-    src: url('fonts/NightmareStory.ttf');
+  font-family: "Nightmare Story";
+  src: url("fonts/NightmareStory.ttf");
 }
 @font-face {
-    font-family: "Helvetica Bold";
-    src: url('fonts/Helvetica.ttf');
+  font-family: "Helvetica Bold";
+  src: url("fonts/Helvetica.ttf");
 }
 @font-face {
-    font-family: "Helvetica Regular";
-    src: url('fonts/Helvetica.ttf');
+  font-family: "Helvetica Regular";
+  src: url("fonts/Helvetica.ttf");
 }
 @font-face {
-    font-family: "Handlee";
-    src: url('fonts/Handlee-Regular.ttf');
+  font-family: "Handlee";
+  src: url("fonts/Handlee-Regular.ttf");
 }
 @font-face {
-    font-family: "The Girl Next Door";
-    src: url('fonts/TheGirlNextDoor-Regular.ttf');
+  font-family: "The Girl Next Door";
+  src: url("fonts/TheGirlNextDoor-Regular.ttf");
 }
 @font-face {
-    font-family: "Comic Caves";
-    src: url('fonts/Comic\ Caves.ttf');
+  font-family: "Comic Caves";
+  src: url("fonts/Comic\ Caves.ttf");
 }
 @font-face {
-    font-family: "Flamenco";
-    src: url('fonts/Flamenco-Regular.ttf');
+  font-family: "Flamenco";
+  src: url("fonts/Flamenco-Regular.ttf");
 }
 @font-face {
-    font-family: "Inter";
-    src: url('fonts/fonts.google.com_specimen_Inter.webloc');
+  font-family: "Inter";
+  src: url("fonts/fonts.google.com_specimen_Inter.webloc");
 }
 @font-face {
-    font-family: "Nico Moji";
-    src: url('fonts/NicoMoji-Regular.ttf');
+  font-family: "Nico Moji";
+  src: url("fonts/NicoMoji-Regular.ttf");
 }
 @font-face {
-    font-family: "KohinoorLatin";
-    src: url('fonts/KohinoorLatin-Bold-BF63c76513f09da.otf');
+  font-family: "KohinoorLatin";
+  src: url("fonts/KohinoorLatin-Bold-BF63c76513f09da.otf");
 }
 @font-face {
-    font-family: "Adamina";
-    src: url('fonts/Adamina-Regular.ttf');
+  font-family: "Adamina";
+  src: url("fonts/Adamina-Regular.ttf");
 }
 @font-face {
-    font-family: "Kite One";
-    src: url('fonts/KiteOne-Regular.ttf');
+  font-family: "Kite One";
+  src: url("fonts/KiteOne-Regular.ttf");
 }
 @font-face {
-    font-family: "AkayaKanadaka-Regular";
-    src: url('fonts/AkayaKanadaka-Regular.ttf');
+  font-family: "AkayaKanadaka-Regular";
+  src: url("fonts/AkayaKanadaka-Regular.ttf");
 }
 @font-face {
-    font-family: "ArcadeClassic";
-    src: url('fonts/ARCADECLASSIC.TTF');
+  font-family: "ArcadeClassic";
+  src: url("fonts/ARCADECLASSIC.TTF");
 }
 @font-face {
-    font-family: "Party LET";
-    src: url('fonts/PartyLET-plain.ttf');
+  font-family: "Party LET";
+  src: url("fonts/PartyLET-plain.ttf");
 }
 @font-face {
-    font-family: "Architects Daughter";
-    src: url('fonts/ArchitectsDaughter-Regular.ttf');
+  font-family: "Architects Daughter";
+  src: url("fonts/ArchitectsDaughter-Regular.ttf");
 }
 @font-face {
-    font-family: "Oxanium";
-    src: url('fonts/Oxanium-VariableFont_wght.ttf');
+  font-family: "Oxanium";
+  src: url("fonts/Oxanium-VariableFont_wght.ttf");
 }
 @font-face {
-    font-family: "JejuHallasan";
-    src: url('fonts/JejuHallasan-Regular.ttf');
+  font-family: "JejuHallasan";
+  src: url("fonts/JejuHallasan-Regular.ttf");
 }
 @font-face {
-    font-family: "Comic Sans MS";
-    src: url('fonts/Comic\ Sans\ MS.ttf');
+  font-family: "Comic Sans MS";
+  src: url("fonts/Comic\ Sans\ MS.ttf");
 }
 @font-face {
-    font-family: "Tinos";
-    src: url('fonts/Tinos-Regular.ttf');
+  font-family: "Tinos";
+  src: url("fonts/Tinos-Regular.ttf");
 }
 @font-face {
-    font-family: "Josefin Sans";
-    src: url('fonts/JosefinSans-Regular.ttf');
+  font-family: "Josefin Sans";
+  src: url("fonts/JosefinSans-Regular.ttf");
 }
 @font-face {
-    font-family: "Inika";
-    src: url('fonts/Inika-Regular.ttf');
+  font-family: "Inika";
+  src: url("fonts/Inika-Regular.ttf");
+}
+@font-face {
+  font-family: "CooperBoldBT";
+  src: url("fonts/CooperBoldBT.ttf");
 }
